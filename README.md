@@ -11,11 +11,11 @@ Algorithms
 
 ### Sorting Algorithms
 
-    * [Selection] ()
+* [Selection] ()
 
-    * [Insertion] ()
+* [Insertion] ()
 
-    * [Shell] ()
+* [Shell] ()
 
 Design Patterns
 --------
@@ -26,7 +26,7 @@ the solution to that problem , in such a way that you can use this solution a mi
 it the same way twice
 >'''
 
-    * [Iterator-迭代器模式](https://github.com/vikingden8/Algorithms-Patterns/blob/master/src/main/java/com/viking/patterns/Iterator.md)
+* [Iterator-迭代器模式](https://github.com/vikingden8/Algorithms-Patterns/blob/master/src/main/java/com/viking/patterns/Iterator.md)
 
 Support
 --------
