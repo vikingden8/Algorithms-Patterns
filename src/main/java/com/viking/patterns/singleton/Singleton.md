@@ -10,8 +10,7 @@
 线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。这些应用都或
 多或少具有资源管理器的功能。每台计算机可以有若干个打印机，但只能有一个Printer Spooler，
 以避免两个打印作业同时输出到打印机中。每台计算机可以有若干通信端口，系统应当集中管理这
-些通信端口，以避免一个通信端口同时被两个请求同时调用。总之，选择单例模式就是为了避免不
-一致状态，避免政出多头。  
+些通信端口，以避免一个通信端口同时被两个请求同时调用。
 
 ### 实现思路
 
@@ -187,7 +186,7 @@ public enum Singleton {
 
 #### 参考资料
 
-原文地址：[单例这种设计模式](http://droidyue.com/blog/2015/01/11/looking-into-singleton/)
+原文地址(有删减，有添加)：[单例这种设计模式](http://droidyue.com/blog/2015/01/11/looking-into-singleton/)
 
 [双重检查锁定与延迟初始化](http://www.infoq.com/cn/articles/double-checked-locking-with-delay-initialization)
 
