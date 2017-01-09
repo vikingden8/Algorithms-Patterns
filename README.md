@@ -28,6 +28,10 @@ it the same way twice
 
 * [Iterator-迭代器模式](https://github.com/vikingden8/Algorithms-Patterns/blob/master/src/main/java/com/viking/patterns/Iterator.md)
 
+* [Fail-Fast和Fail-Safe设计模式](http://vikingden.cn/2017/01/05/design-patterns-001-fast-fail-vs-fast-safe/)
+
+* [单例模式](https://github.com/vikingden8/Algorithms-Patterns/blob/master/src/main/java/com/viking/patterns/singleton/Singleton.md)
+
 Support
 --------
 
