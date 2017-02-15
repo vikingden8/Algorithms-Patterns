@@ -1,4 +1,4 @@
-package com.viking.util;
+package com.viking.algorithms.util;
 
 /**
  * Author : Viking Den <vikingden7@gmail.com>
