@@ -43,7 +43,7 @@ public class SelectionSort extends BasicSorting {
 
     public static void main(String[] args){
         String[] nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
-        SelectionSort sSort = new SelectionSort() ;
+        BasicSorting sSort = new SelectionSort() ;
         System.out.println("Before Sort");
         show(nums);
         sSort.sort(nums);
