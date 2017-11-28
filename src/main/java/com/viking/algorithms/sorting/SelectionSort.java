@@ -41,13 +41,29 @@ public class SelectionSort extends BasicSorting {
         }
     }
 
+    public void reverseSort(Comparable[] a){
+        int N = a.length ;
+        for (int i = 0 ; i < N; i++){
+            int max = i ;
+            for (int j = i +1 ; j < N; j++){
+                if (less(a[max], a[j])) max = j ;
+            }
+            if (max > i) exchange(a, i, max);
+        }
+    }
+
     public static void main(String[] args){
         String[] nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
-        BasicSorting sSort = new SelectionSort() ;
+        SelectionSort sSort = new SelectionSort() ;
         System.out.println("Before Sort");
         show(nums);
         sSort.sort(nums);
         System.out.println("After Sort");
+        show(nums);
+
+        System.out.println("After Reverse Sort");
+        nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
+        sSort.reverseSort(nums);
         show(nums);
     }
 }
