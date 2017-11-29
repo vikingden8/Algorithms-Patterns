@@ -41,20 +41,19 @@ public class BubbleSort extends BasicSorting {
 
     public void bestSort(Comparable[] a){
         int N = a.length ;
-        for (int i = 0 ; i < N ; i++){
-            System.out.println("---------" + i + "-----------");
+        int lastExchanged = N ;
+        int k ;
+        while (lastExchanged > 0){
             show(a);
-            int lastExchanged = 0 ;
-            for (int j = 0 ; j < N - i -1  ; j++){
+            k = lastExchanged ;
+            lastExchanged = 0 ;
+            for (int j = 0 ; j < k -1  ; j++){
                 if (more(a[j ] , a[j + 1])) {
                     exchange(a, j, j + 1);
-                    //remember to add 1
-                    lastExchanged = (j + 1) +1 ;
+                    lastExchanged = (j + 1)  ;
                 }
             }
             System.out.println("lastExchanged : " + lastExchanged);
-            if (lastExchanged == 0) break;
-            N = lastExchanged ;
         }
     }
 
