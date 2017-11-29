@@ -45,10 +45,11 @@ public class BubbleSort extends BasicSorting {
             System.out.println("---------" + i + "-----------");
             show(a);
             int lastExchanged = 0 ;
-            for (int j = 1 ; j < N - i  ; j++){
-                if (more(a[j - 1] , a[j])) {
-                    exchange(a, j-1, j);
-                    lastExchanged = j + 1 ;
+            for (int j = 0 ; j < N - i -1  ; j++){
+                if (more(a[j ] , a[j + 1])) {
+                    exchange(a, j, j + 1);
+                    //remember to add 1
+                    lastExchanged = (j + 1) +1 ;
                 }
             }
             System.out.println("lastExchanged : " + lastExchanged);
