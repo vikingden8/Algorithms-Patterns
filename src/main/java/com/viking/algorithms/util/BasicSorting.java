@@ -18,6 +18,10 @@ public abstract class BasicSorting {
         return a.compareTo(b) < 0 ;
     }
 
+    public static boolean more(Comparable a , Comparable b){
+        return a.compareTo(b) > 0 ;
+    }
+
     /**
      * 交换数组对象中的两个指定位置的对象
      * @param a 交换的数组对象
