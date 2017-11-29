@@ -21,7 +21,7 @@ public class BubbleSort extends BasicSorting {
         }
     }
 
-    public void optiSort(Comparable[] a) {
+    public void optimizedSort(Comparable[] a) {
         int N = a.length ;
         for (int i = 0 ; i < N ; i++){
             System.out.println("---------" + i + "-----------");
@@ -39,6 +39,25 @@ public class BubbleSort extends BasicSorting {
         }
     }
 
+    public void bestSort(Comparable[] a){
+        int N = a.length ;
+        for (int i = 0 ; i < N ; i++){
+            System.out.println("---------" + i + "-----------");
+            show(a);
+            int lastExchanged = 0 ;
+            for (int j = 1 ; j < N - i  ; j++){
+                if (more(a[j - 1] , a[j])) {
+                    exchange(a, j-1, j);
+                    lastExchanged = j + 1 ;
+                }
+            }
+            System.out.println("lastExchanged : " + lastExchanged);
+            if (lastExchanged == 0) break;
+            N = lastExchanged ;
+        }
+    }
+
+
     public static void main(String[] args){
         String[] nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
         BubbleSort sSort = new BubbleSort() ;
@@ -51,7 +70,14 @@ public class BubbleSort extends BasicSorting {
         nums = new String[]{"R" , "A" , "F" , "G" , "V" , "M"} ;
         System.out.println("Before Sort");
         show(nums);
-        sSort.optiSort(nums);
+        sSort.optimizedSort(nums);
+        System.out.println("After Sort");
+        show(nums);
+
+        nums = new String[]{"R" , "F" , "G" , "A" , "V" , "M"} ;
+        System.out.println("Before Sort");
+        show(nums);
+        sSort.bestSort(nums);
         System.out.println("After Sort");
         show(nums);
     }
