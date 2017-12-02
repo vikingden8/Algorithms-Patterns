@@ -8,6 +8,21 @@ import com.viking.algorithms.util.BasicSorting;
  */
 public class BubbleSort extends BasicSorting {
 
+    public void originSort(Comparable[] a){
+        while(true) {
+            int N = a.length ;
+            boolean  hasSwaped = false ;
+            for (int i = 0 ; i < N - 1 ; i ++){
+                if (less(a[i + 1], a[i])){
+                    exchange(a, i, i + 1);
+                    hasSwaped = true ;
+                }
+            }
+            if (!hasSwaped){
+                break ;
+            }
+        };
+    }
 
     @Override
     public void sort(Comparable[] a) {
@@ -48,7 +63,7 @@ public class BubbleSort extends BasicSorting {
             k = lastExchanged ;
             lastExchanged = 0 ;
             for (int j = 0 ; j < k -1  ; j++){
-                if (more(a[j ] , a[j + 1])) {
+                if (less(a[j + 1] , a[j])) {
                     exchange(a, j, j + 1);
                     lastExchanged = (j + 1)  ;
                 }
@@ -61,6 +76,12 @@ public class BubbleSort extends BasicSorting {
     public static void main(String[] args){
         String[] nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
         BubbleSort sSort = new BubbleSort() ;
+        System.out.println("Before Sort");
+        show(nums);
+        sSort.originSort(nums);
+        System.out.println("After Sort");
+        show(nums);
+
         System.out.println("Before Sort");
         show(nums);
         sSort.sort(nums);
