@@ -33,9 +33,6 @@ public class CountingSort extends BasicSorting {
                 array[curr] = num;
                 counting_array[num]--;
                 curr++;
-                if(curr > array.length){
-                    break;
-                }
             }
             num++;
         }
