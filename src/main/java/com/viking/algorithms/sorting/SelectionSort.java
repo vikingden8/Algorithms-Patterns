@@ -41,6 +41,38 @@ public class SelectionSort extends BasicSorting {
         }
     }
 
+    public void optimizedSort(Comparable[] a){
+        int left = 0 ;
+        int right = a.length -1 ;
+        int min ;
+        int max ;
+        while (left < right){
+            min = left ;
+            max = right ;
+
+            for (int i = left ; i <= right ; i++){
+                if (less(a[i], a[min])){
+                    min = i ;
+                }
+                if (less(a[max], a[i])){
+                    max = i ;
+                }
+            }
+
+            if (min != left){
+                exchange(a, min, left);
+            }
+            if (max == left ) max = min ;
+            if (max != right){
+                exchange(a, max, right);
+            }
+
+            ++ left ;
+            -- right ;
+
+        }
+    }
+
     public void reverseSort(Comparable[] a){
         int N = a.length ;
         for (int i = 0 ; i < N; i++){
@@ -53,7 +85,7 @@ public class SelectionSort extends BasicSorting {
     }
 
     public static void main(String[] args){
-        String[] nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
+        String[] nums = new String[]{"R" , "G" , "A" , "T", "F" , "V" , "M"} ;
         SelectionSort sSort = new SelectionSort() ;
         System.out.println("Before Sort");
         show(nums);
@@ -61,9 +93,13 @@ public class SelectionSort extends BasicSorting {
         System.out.println("After Sort");
         show(nums);
 
-        System.out.println("After Reverse Sort");
         nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
-        sSort.reverseSort(nums);
+//        nums = new String[]{"R" , "G" , "A" , "T", "F" , "V" , "M"} ;
+        System.out.println("Before Sort");
         show(nums);
+        System.out.println("After Sort");
+        sSort.optimizedSort(nums);
+        show(nums);
+
     }
 }
