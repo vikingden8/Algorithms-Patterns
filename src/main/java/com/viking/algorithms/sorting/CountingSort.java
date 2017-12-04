@@ -15,12 +15,14 @@ public class CountingSort extends BasicSorting {
     }
 
     public void sortInteger(int[] array){
-        int max = maximum(array);
+        int max = max(array);
+        int min = min(array) ;
+        System.out.println("min : " + min);
         System.out.println("max : " + max);
-        int[] counting_array = new int[max + 1]; // Zeros out the array
+        int[] counting_array = new int[(max - min) + 1];
 
         for(int curr = 0; curr < array.length; curr ++){
-            counting_array[array[curr]]++;
+            counting_array[array[curr] - min]++;
         }
 
         printArray(counting_array);
@@ -30,7 +32,7 @@ public class CountingSort extends BasicSorting {
 
         while(curr < array.length){
             while(counting_array[num] > 0){
-                array[curr] = num;
+                array[curr] = num + min;
                 counting_array[num]--;
                 curr++;
             }
@@ -45,7 +47,7 @@ public class CountingSort extends BasicSorting {
         System.out.println("\n");
     }
 
-    private int maximum(int[] array){
+    private int max(int[] array){
         int max = array[0];
         if (array.length > 1){
             for(int curr = 1; curr < array.length; curr++){
@@ -55,8 +57,20 @@ public class CountingSort extends BasicSorting {
         return max;
     }
 
+    private int min(int[] array){
+        int min = array[0] ;
+        if (array.length > 1){
+            for (int curr = 1; curr < array.length; curr++){
+                if (array[curr] < min){
+                    min = array[curr] ;
+                }
+            }
+        }
+        return min ;
+    }
+
     public static void main(String[] args) {
-        int test1[] = {2, 6, 4, 3, 2, 3, 4, 6, 3, 4, 3, 5, 2, 6, 0};
+        int test1[] = {2, 6, 4, 3, 2, 3, 4, 6, 3, 4, 3, 5, 2, 6};
         CountingSort countingSort = new CountingSort() ;
         countingSort.printArray(test1);
         countingSort.sortInteger(test1);
