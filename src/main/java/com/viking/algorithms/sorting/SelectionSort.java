@@ -62,13 +62,14 @@ public class SelectionSort extends BasicSorting {
             if (min != left){
                 exchange(a, min, left);
             }
+            //in case left has exchanged
             if (max == left ) max = min ;
             if (max != right){
                 exchange(a, max, right);
             }
 
-            ++ left ;
-            -- right ;
+            left ++;
+            right --;
 
         }
     }
