@@ -25,18 +25,36 @@ public class InsertSort extends BasicSorting{
     public void sort(Comparable[] a) {
         int N = a.length ;
         for (int i = 1 ; i < N ; i++){
+            System.out.println("i : " + i);
             for (int j = i ; j > 0 && less(a[j] , a[j-1]) ; j--){
+                System.out.println("j : " + j);
                 exchange(a , j , j-1);
+                show(a);
             }
+        }
+    }
+
+    public void optimizedSort(Comparable[] a){
+        int N = a.length ;
+        for (int i = 1; i < N ; i++){
+            System.out.println("i : " + i);
+            Comparable insertNode = a[i] ;
+            int j = i - 1 ;
+            while (j >= 0 && less(insertNode, a[j])){
+                a[j + 1] = a[j] ;
+                j -- ;
+            }
+            a[j + 1] = insertNode ;
+            show(a);
         }
     }
 
     public static void main(String[] args){
         String[] nums = new String[]{"R" , "G" , "A" , "F" , "V" , "M"} ;
-        BasicSorting sSort = new InsertSort() ;
+        InsertSort sSort = new InsertSort() ;
         System.out.println("Before Sort");
         show(nums);
-        sSort.sort(nums);
+        sSort.optimizedSort(nums);
         System.out.println("After Sort");
         show(nums);
     }
