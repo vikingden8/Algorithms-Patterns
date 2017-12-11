@@ -25,11 +25,8 @@ public class InsertSort extends BasicSorting{
     public void sort(Comparable[] a) {
         int N = a.length ;
         for (int i = 1 ; i < N ; i++){
-            System.out.println("i : " + i);
             for (int j = i ; j > 0 && less(a[j] , a[j-1]) ; j--){
-                System.out.println("j : " + j);
                 exchange(a , j , j-1);
-                show(a);
             }
         }
     }
@@ -37,7 +34,6 @@ public class InsertSort extends BasicSorting{
     public void optimizedSort(Comparable[] a){
         int N = a.length ;
         for (int i = 1; i < N ; i++){
-            System.out.println("i : " + i);
             Comparable insertNode = a[i] ;
             int j = i - 1 ;
             while (j >= 0 && less(insertNode, a[j])){
@@ -45,7 +41,6 @@ public class InsertSort extends BasicSorting{
                 j -- ;
             }
             a[j + 1] = insertNode ;
-            show(a);
         }
     }
 
