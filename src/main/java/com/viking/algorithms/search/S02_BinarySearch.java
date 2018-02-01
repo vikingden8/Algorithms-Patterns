@@ -10,6 +10,17 @@ public class S02_BinarySearch implements BaseSearch {
     public void search() {
         int[] items = new int[]{2, 5, 8, 12, 16, 23, 38, 56, 72, 91} ;
         int   target = 23 ;
+        binarySearch(items, target);
+
+        int result = binarySearchByRecursive(items, target, 0, items.length - 1);
+        if (result == -1){
+            System.out.println("No binary search result with the given target!");
+        }else{
+            System.out.println("Binary search result index : " + result);
+        }
+    }
+
+    private void binarySearch(int[] items, int target){
         int   result = -1 ;
         int   low = 0, high = items.length - 1 ;
         int   median ;
@@ -28,7 +39,22 @@ public class S02_BinarySearch implements BaseSearch {
         if (result == -1){
             System.out.println("No binary search result with the given target.");
         }else{
-            System.out.println("binary search result : " + result);
+            System.out.println("binary search result index : " + result);
+        }
+    }
+
+    private int binarySearchByRecursive(int[] items, int target, int left, int right){
+        if (left <= right){
+            int median = ( left + right ) / 2 ;
+            if (items[median] == target){
+                return median ;
+            }
+            if (items[median] < target){
+                return binarySearchByRecursive(items, target, median + 1, right) ;
+            }
+            return binarySearchByRecursive(items, target, left, median - 1) ;
+        }else{
+            return -1 ;
         }
     }
 
