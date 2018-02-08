@@ -14,16 +14,13 @@ import java.util.List;
  * 
  *
  */
-public class BinTreeTraverse2 {
+public class BinTreeTraverse {
 
 	private int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	private static List<Node> nodeList = null;
 
 	/**
 	 * 内部类：节点
-	 * 
-	 * @author ocaicai@yeah.net @date: 2011-5-17
-	 * 
 	 */
 	private static class Node {
 		Node leftChild;
@@ -38,7 +35,7 @@ public class BinTreeTraverse2 {
 	}
 
 	public void createBinTree() {
-		nodeList = new LinkedList<Node>();
+		nodeList = new LinkedList<>();
 		// 将一个数组的值依次转换为Node节点
 		for (int nodeIndex = 0; nodeIndex < array.length; nodeIndex++) {
 			nodeList.add(new Node(array[nodeIndex]));
@@ -113,7 +110,7 @@ public class BinTreeTraverse2 {
 	}
 
 	public static void main(String[] args) {
-		BinTreeTraverse2 binTree = new BinTreeTraverse2();
+		BinTreeTraverse binTree = new BinTreeTraverse();
 		binTree.createBinTree();
 		// nodeList中第0个索引处的值即为根节点
 		Node root = nodeList.get(0);
